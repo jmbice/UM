@@ -1,29 +1,26 @@
 {
-    "name": "bar-app",
+    "name": "mono",
     "version": "1.0.1",
     "author": "Jordan Bice",
     "license": "UNLICENSED",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/jmbice/bar.git"
+        "url": "git+https://github.com/jmbice/mono.git"
     },
     "scripts": {
-        "cdk:deploy:all": "tsx scripts/monorepo_stack_commands.ts deploy",
-        "cdk:destroy:all": "tsx scripts/monorepo_stack_commands.ts destroy"
+        "cdk:deploy:all": "tsx scripts/deployment_commands.ts deploy",
+        "cdk:destroy:all": "tsx scripts/deployment_commands.ts destroy"
     },
     "workspaces": [
-        "src/bar-client",
-        "src/bar-mobile",
-        "src/bar-infrastructure",
-        "src/bar-server",
-        "src/bar-harvester",
-        "src/@bice.macarron/bar-library",
-        "src/@bice.macarron/bar-library-2"
+        "apps/web",
+        "apps/mobile",
+        "libraries/monoComponents",
+        "libraries/monoTypes"
     ],
     "bugs": {
-        "url": "https://github.com/jmbice/bar/issues"
+        "url": "https://github.com/jmbice/mono/issues"
     },
-    "homepage": "https://github.com/jmbice/bar#readme",
+    "homepage": "https://github.com/jmbice/mono#readme",
     "devDependencies": {
         "dotenv": "^16.0.2",
         "tsx": "^4.16.2",

@@ -1,4 +1,4 @@
-Welcome to your new TanStack app! 
+Welcome to your new TanStack app!
 
 # Getting Started
 
@@ -29,8 +29,6 @@ pnpm run test
 
 This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
 
-
-
 ## Shadcn
 
 Add components using the canary version of [Shadcn](https://ui.shadcn.com/).
@@ -39,9 +37,8 @@ Add components using the canary version of [Shadcn](https://ui.shadcn.com/).
 pnpx shadcn@canary add button
 ```
 
-
-
 ## Routing
+
 This project uses [TanStack Router](https://tanstack.com/router). The initial setup is a file based router. Which means that the routes are managed as fiels in `src/routes`.
 
 ### Adding A Route
@@ -77,8 +74,8 @@ In the File Based Routing setup the layout is located in `src/routes/__root.tsx`
 Here is an example layout that includes a header:
 
 ```tsx
-import { createRootRoute, Outlet } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 import { Link } from "@tanstack/react-router";
 
@@ -95,13 +92,12 @@ export const Route = createRootRoute({
       <TanStackRouterDevtools />
     </>
   ),
-})
+});
 ```
 
 The `<TanStackRouterDevtools />` component is not required so you can remove it if you don't want it in your layout.
 
 More information on layouts can be found in the [Layouts documentation](hthttps://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
-
 
 ## Data Fetching
 
@@ -146,7 +142,7 @@ First add your dependencies:
 pnpm install @tanstack/react-query @tanstack/react-query-devtools
 ```
 
-Next we'll need to creata query client and provider. We recommend putting those in `main.tsx`.
+Next we'll need to creat a query client and provider. We recommend putting those in `main.tsx`.
 
 ```tsx
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
