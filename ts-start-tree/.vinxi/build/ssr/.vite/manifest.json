@@ -1,0 +1,50 @@
+{
+  "_ssr-3i3cRPPr.js": {
+    "file": "assets/ssr-3i3cRPPr.js",
+    "name": "ssr",
+    "dynamicImports": [
+      "src/routes/index.tsx?tsr-split=component",
+      "src/routes/guitar/$guitarId.tsx?tsr-split=component"
+    ],
+    "css": [
+      "assets/ssr-RncqkDvw.css"
+    ]
+  },
+  "_ssr-RncqkDvw.css": {
+    "file": "assets/ssr-RncqkDvw.css",
+    "src": "_ssr-RncqkDvw.css"
+  },
+  "src/routes/guitar/$guitarId.tsx?tsr-split=component": {
+    "file": "assets/_guitarId-Br5yz0cs.js",
+    "name": "_guitarId",
+    "src": "src/routes/guitar/$guitarId.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ssr-3i3cRPPr.js"
+    ],
+    "css": [
+      "assets/_guitarId-BK97Tq65.css"
+    ]
+  },
+  "src/routes/index.tsx?tsr-split=component": {
+    "file": "assets/index-Dm3RFHB8.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ssr-3i3cRPPr.js"
+    ],
+    "css": [
+      "assets/index-BKV0mrBM.css"
+    ]
+  },
+  "virtual:$vinxi/handler/ssr": {
+    "file": "ssr.js",
+    "name": "ssr",
+    "src": "virtual:$vinxi/handler/ssr",
+    "isEntry": true,
+    "imports": [
+      "_ssr-3i3cRPPr.js"
+    ]
+  }
+}

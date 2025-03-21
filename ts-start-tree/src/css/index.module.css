@@ -1,0 +1,116 @@
+.app_heading_text {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold;
+  margin-bottom: 2rem; /* mb-8 */
+  text-align: center;
+}
+
+.app_card {
+  width: 100%;
+  position: relative;
+  margin-bottom: 6rem; /* mb-24 = 96px */
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    width: calc(50% - 1.5rem);
+  }
+  @media (min-width: 1280px) {
+    width: calc(33.333% - 2rem);
+  }
+}
+
+.app_image_container {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 2rem; /* mb-8 = 32px */
+}
+
+.app_image_wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1rem; /* rounded-2xl */
+  border: 4px solid rgb(31, 41, 55); /* border-gray-800 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* shadow-2xl */
+}
+
+.guitar_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.group:hover .guitar_image {
+  transform: scale(1.05);
+}
+
+.app_gradient_overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.group:hover .app_gradient_overlay {
+  opacity: 1;
+}
+
+.app_view_details {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(16, 185, 129, 0.8); /* bg-emerald-500/80 */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px; /* rounded-full */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  backdrop-filter: blur(4px); /* backdrop-blur-sm */
+}
+
+.group:hover .app_view_details {
+  opacity: 1;
+}
+
+.app_info_box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  width: 80%;
+  background-color: rgba(17, 24, 39, 0.6); /* bg-gray-900/60 */
+  backdrop-filter: blur(12px); /* backdrop-blur-md */
+  border-radius: 1rem; /* rounded-2xl */
+  padding: 1.25rem; /* p-5 */
+  border: 1px solid rgba(31, 41, 55, 0.5); /* border-gray-800/50 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* shadow-xl */
+  transform: translateY(40%);
+}
+
+.app_title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.app_description {
+  color: rgb(209, 213, 219); /* text-gray-300 */
+  margin-bottom: 0.75rem; /* mb-3 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.app_price {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: bold;
+  color: rgb(52, 211, 153); /* text-emerald-400 */
+}

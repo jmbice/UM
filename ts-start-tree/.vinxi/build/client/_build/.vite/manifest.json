@@ -1,0 +1,50 @@
+{
+  "_client-DelccJAP.js": {
+    "file": "assets/client-DelccJAP.js",
+    "name": "client",
+    "dynamicImports": [
+      "src/routes/index.tsx?tsr-split=component",
+      "src/routes/guitar/$guitarId.tsx?tsr-split=component"
+    ],
+    "css": [
+      "assets/client-RncqkDvw.css"
+    ]
+  },
+  "_client-RncqkDvw.css": {
+    "file": "assets/client-RncqkDvw.css",
+    "src": "_client-RncqkDvw.css"
+  },
+  "src/routes/guitar/$guitarId.tsx?tsr-split=component": {
+    "file": "assets/_guitarId-BtJ75TBe.js",
+    "name": "_guitarId",
+    "src": "src/routes/guitar/$guitarId.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-DelccJAP.js"
+    ],
+    "css": [
+      "assets/_guitarId-BK97Tq65.css"
+    ]
+  },
+  "src/routes/index.tsx?tsr-split=component": {
+    "file": "assets/index-CVrlfdjT.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-DelccJAP.js"
+    ],
+    "css": [
+      "assets/index-BKV0mrBM.css"
+    ]
+  },
+  "virtual:$vinxi/handler/client": {
+    "file": "assets/client-BE-LO065.js",
+    "name": "client",
+    "src": "virtual:$vinxi/handler/client",
+    "isEntry": true,
+    "imports": [
+      "_client-DelccJAP.js"
+    ]
+  }
+}
