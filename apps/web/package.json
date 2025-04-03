@@ -10,7 +10,8 @@
     "dev": "vinxi dev"
   },
   "dependencies": {
-    "@mantine/core": "^7.17.2",
+    "@ngneat/falso": "^7.3.0",
+    "@tanstack/react-query": "^5.69.0",
     "@tanstack/react-router": "^1.104.1",
     "@tanstack/react-start": "^1.111.12",
     "@tanstack/router-devtools": "^1.104.3",
@@ -22,7 +23,8 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "vinxi": "^0.5.3",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
