@@ -8,10 +8,10 @@ export default function Header() {
         <div className={styles.header_flex}>
           <div className={styles.header_responsive}>
             <div className={styles.header_column}>
-              <div className={styles.header_responsive_text}>Cascade Tone</div>
-              <p className={styles.header_text_subtitle}>
-                Premium Handcrafted Guitars
-              </p>
+              <div className={styles.header_responsive_text}>
+                Ancestry Explorer
+              </div>
+              <p className={styles.header_text_subtitle}>by Jordan Bice</p>
             </div>
           </div>
         </div>
@@ -20,8 +20,8 @@ export default function Header() {
           <div className={styles.header_image_inner}>
             <div className={styles.header_image_blur}></div>
             <img
-              src="/logo.png"
-              alt="Cascade Tone Logo"
+              src="/logo_processed.png"
+              alt="Ancestry Explorer Logo"
               className={styles.header_image}
             />
           </div>
