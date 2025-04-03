@@ -4,9 +4,11 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { MantineProvider } from "@mantine/core";
 import Header from "../components/Header";
 import styles from "../css/app.module.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 export const Route = createRootRoute({
   head: () => ({
@@ -19,7 +21,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "TanStack Guitar Store",
+        title: "Family Tree",
       },
     ],
   }),
@@ -27,12 +29,12 @@ export const Route = createRootRoute({
 
   component: () => (
     <RootDocument>
-      <MantineProvider defaultColorScheme="dark">
+      <QueryClientProvider client={queryClient}>
         <Header />
         <div className={styles.viewTransitionGroup}>
           <Outlet />
         </div>
-      </MantineProvider>
+      </QueryClientProvider>
     </RootDocument>
   ),
 });
