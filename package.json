@@ -1,33 +1,33 @@
 {
-    "name": "mono",
-    "version": "1.0.1",
-    "author": "Jordan Bice",
-    "license": "UNLICENSED",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jmbice/mono.git"
-    },
-    "scripts": {
-        "cdk:deploy:all": "tsx scripts/deployment_commands.ts deploy",
-        "cdk:destroy:all": "tsx scripts/deployment_commands.ts destroy"
-    },
-    "workspaces": [
-        "apps/web",
-        "apps/mobile",
-        "libraries/monoComponents",
-        "libraries/monoTypes"
-    ],
-    "bugs": {
-        "url": "https://github.com/jmbice/mono/issues"
-    },
-    "homepage": "https://github.com/jmbice/mono#readme",
-    "devDependencies": {
-        "dotenv": "^16.0.2",
-        "tsx": "^4.16.2",
-        "typescript": "^5.4.3"
-    },
-    "engines": {
-        "npm": "10.2.2",
-        "node": "20.9.0"
-    }
+  "name": "mono",
+  "version": "1.0.1",
+  "author": "Jordan Bice",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmbice/UM.git"
+  },
+  "scripts": {
+    "cdk:deploy:all": "tsx scripts/deployment_commands.ts deploy",
+    "cdk:destroy:all": "tsx scripts/deployment_commands.ts destroy"
+  },
+  "workspaces": [
+    "apps/web",
+    "apps/mobile",
+    "libraries/monoComponents",
+    "libraries/monoTypes"
+  ],
+  "bugs": {
+    "url": "https://github.com/jmbice/UM/issues"
+  },
+  "homepage": "https://github.com/jmbice/UM#readme",
+  "devDependencies": {
+    "dotenv": "^16.0.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.4.3"
+  },
+  "engines": {
+    "npm": "10.2.2",
+    "node": "20.9.0"
+  }
 }
