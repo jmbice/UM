@@ -4,7 +4,6 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import Header from "../components/Header";
 import styles from "../css/app.module.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -30,7 +29,6 @@ export const Route = createRootRoute({
   component: () => (
     <RootDocument>
       <QueryClientProvider client={queryClient}>
-        <Header />
         <div className={styles.viewTransitionGroup}>
           <Outlet />
         </div>
