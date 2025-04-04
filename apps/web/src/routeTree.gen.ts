@@ -12,7 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
-import { Route as GuitarGuitarIdImport } from './routes/guitar/$guitarId'
+import { Route as FamilyMemberFamilyMemberIdImport } from './routes/familyMember/$familyMemberId'
 
 // Create/Update Routes
 
@@ -22,11 +22,13 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const GuitarGuitarIdRoute = GuitarGuitarIdImport.update({
-  id: '/guitar/$guitarId',
-  path: '/guitar/$guitarId',
-  getParentRoute: () => rootRoute,
-} as any)
+const FamilyMemberFamilyMemberIdRoute = FamilyMemberFamilyMemberIdImport.update(
+  {
+    id: '/familyMember/$familyMemberId',
+    path: '/familyMember/$familyMemberId',
+    getParentRoute: () => rootRoute,
+  } as any,
+)
 
 // Populate the FileRoutesByPath interface
 
@@ -39,11 +41,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/guitar/$guitarId': {
-      id: '/guitar/$guitarId'
-      path: '/guitar/$guitarId'
-      fullPath: '/guitar/$guitarId'
-      preLoaderRoute: typeof GuitarGuitarIdImport
+    '/familyMember/$familyMemberId': {
+      id: '/familyMember/$familyMemberId'
+      path: '/familyMember/$familyMemberId'
+      fullPath: '/familyMember/$familyMemberId'
+      preLoaderRoute: typeof FamilyMemberFamilyMemberIdImport
       parentRoute: typeof rootRoute
     }
   }
@@ -53,37 +55,37 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/guitar/$guitarId': typeof GuitarGuitarIdRoute
+  '/familyMember/$familyMemberId': typeof FamilyMemberFamilyMemberIdRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/guitar/$guitarId': typeof GuitarGuitarIdRoute
+  '/familyMember/$familyMemberId': typeof FamilyMemberFamilyMemberIdRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/guitar/$guitarId': typeof GuitarGuitarIdRoute
+  '/familyMember/$familyMemberId': typeof FamilyMemberFamilyMemberIdRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/guitar/$guitarId'
+  fullPaths: '/' | '/familyMember/$familyMemberId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/guitar/$guitarId'
-  id: '__root__' | '/' | '/guitar/$guitarId'
+  to: '/' | '/familyMember/$familyMemberId'
+  id: '__root__' | '/' | '/familyMember/$familyMemberId'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  GuitarGuitarIdRoute: typeof GuitarGuitarIdRoute
+  FamilyMemberFamilyMemberIdRoute: typeof FamilyMemberFamilyMemberIdRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  GuitarGuitarIdRoute: GuitarGuitarIdRoute,
+  FamilyMemberFamilyMemberIdRoute: FamilyMemberFamilyMemberIdRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,14 +99,14 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/guitar/$guitarId"
+        "/familyMember/$familyMemberId"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/guitar/$guitarId": {
-      "filePath": "guitar/$guitarId.tsx"
+    "/familyMember/$familyMemberId": {
+      "filePath": "familyMember/$familyMemberId.tsx"
     }
   }
 }
