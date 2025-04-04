@@ -1,18 +1,22 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import guitars from "@/guitars";
+import { createFileRoute } from "@tanstack/react-router";
 import styles from "../css/index.module.css";
 import { RootStock } from "@/components/RootStock";
+import { z } from "zod";
+import { AddFamilyMemberModal } from "@/components/AddFamilyModal";
 
 export const Route = createFileRoute("/")({
   component: App,
+  validateSearch: z.object({
+    rootId: z.string(),
+  }),
 });
 
 export default function App() {
   return (
     <>
-      <h1 className={styles.app_heading_text}>Family Tree</h1>
       <div className={styles.app_flex_container}>
         <RootStock />
+        <AddFamilyMemberModal />
       </div>
     </>
   );
