@@ -1,6 +1,6 @@
-United Masters Inspiration
+Interview Inspiration
 
-I was frustrated with how I implemented virtualization previously and thought it would be fun to try a custom virtualization. I added some of the css elements that we discussed in our interview. I just thought I'd share this to show you I'm capable of pushing myself further. This is far from production ready, but shows some basic form, modal, and data management skills.
+I wanted to take a shot at implementing tree-based virtualization based on a coding challenge I recieved recently. While a little rough around the edges, this shows how I break down infinitely data sets, lazy-loading, vanilla react-based forms, modals, and some data management skills based on a some recent inspiration.
 
 # Getting Started
 
