@@ -15,15 +15,24 @@ export const TreeNode = ({
   deathDay,
   childrenCount,
   generation,
-}: FamilyMember & { generation: number }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   /* Retrive virtualization state functions */
   const { initializeVirtualizationState, toggleIsOpen } =
     useVirtualizationStore((store) => store.actions);
 
   /* Retrieve virtualization state for family-tree node */
   const state = useVirtualizationStore((store) => store.state[id]);
-  const { isVisible, childrenQueryId, isOpen } =
-    state || DEFAULT_VIRTUALIZATION_STATE;
+  const {
+    childrenQueryId,
+    isVisible: isVirtualizationVisible,
+    isOpen: isVisualizationOpen,
+  } = state || DEFAULT_VIRTUALIZATION_STATE;
+
+  useEffect(() => {
+    setIsOpen(isVisualizationOpen);
+    setIsVisible(isVirtualizationVisible);
+  }, [isVisualizationOpen, isVirtualizationVisible]);
 
   /* Register virtualization state if not present */
   useEffect(() => {
