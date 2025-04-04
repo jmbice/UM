@@ -5,6 +5,40 @@ import type {
 } from "@/pure/state.types";
 import { create } from "zustand";
 
+// ADD FAMILY MEMBER
+export type AddFamilyMember = {
+  parentId: string;
+  parentName: string;
+  childrenQueryId: number;
+} & {
+  setAddFamilyMember: (
+    parentId: string,
+    parentName: string,
+    childrenQueryId: number
+  ) => void;
+  clearAddFamilyMember: () => void;
+};
+
+export const useAddFamilyMember = create<AddFamilyMember>((set) => ({
+  parentId: "",
+  parentName: "",
+  childrenQueryId: 0,
+  setAddFamilyMember: (parentId, parentName, childrenQueryId) =>
+    set(() => ({
+      parentId,
+      parentName,
+      childrenQueryId,
+    })),
+  clearAddFamilyMember: () =>
+    set(() => ({
+      parentId: "",
+      parentName: "",
+      childrenQueryId: 0,
+    })),
+}));
+
+////////
+
 // DOM-UPDATE STORE
 export const useDomUpdateStore = create<DomStore>((set) => ({
   domUpdateId: "",
