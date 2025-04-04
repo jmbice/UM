@@ -1,12 +1,14 @@
-import { useFamilyMemberData } from "@/hooks/useFamilyTreeData";
 import type { FamilyMember } from "@/pure/tree.types";
 import { ShowIf } from "./ShowIf";
 import { useEffect, useState } from "react";
+import styles from "../css/treeNode.module.css";
 import {
+  useAddFamilyMember,
   useDomUpdateStore,
   useVirtualizationStore,
 } from "@/state/store.zustand";
 import { DEFAULT_VIRTUALIZATION_STATE } from "@/pure/defaults.constants";
+import { useOffspringData } from "@/hooks/useOffspringData";
 
 export const TreeNode = ({
   name,
@@ -14,7 +16,9 @@ export const TreeNode = ({
   birthday,
   deathDay,
   childrenCount,
+  parentsQueryId,
   generation,
+}: FamilyMember & { generation: number; parentsQueryId: number }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   /* Retrive virtualization state functions */
@@ -47,7 +51,7 @@ export const TreeNode = ({
     isLoadingChildren,
     isErrorLoadingChildren,
     error,
-  } = useFamilyMemberData({
+  } = useOffspringData({
     familyMemberId: id,
     childrenCount,
     childrenQueryId,

@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 import { TreeNode } from "./TreeNode";
-import { useEarliestAncestor } from "@/hooks/useFamilyTreeData";
 import type { FamilyMember } from "@/pure/tree.types";
 import { ShowIf } from "./ShowIf";
 import {
   useDomUpdateStore,
   useVirtualizationStore,
 } from "../state/store.zustand";
+import { useEarliestAncestorOffspringData } from "@/hooks/useEarliestAncestorOffspringData";
 
 export const RootStock = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -47,7 +47,7 @@ export const RootStock = () => {
     isLoadingEarliestAncestor,
     isErrorLoadingEarliestAncestor,
     error,
-  } = useEarliestAncestor();
+  } = useEarliestAncestorOffspringData();
 
   return (
     <div
@@ -55,8 +55,6 @@ export const RootStock = () => {
       style={{
         height: "100vh",
         overflowY: "scroll",
-        border: "1px solid fuchsia  ",
-        borderRadius: "5px",
       }}
     >
       <ShowIf
@@ -70,8 +68,11 @@ export const RootStock = () => {
       <ShowIf
         condition={!!earliestAncestor}
         show={
-          // <p>OK</p>
-          <TreeNode {...(earliestAncestor as FamilyMember)} generation={1} />
+          <TreeNode
+            {...(earliestAncestor as FamilyMember)}
+            generation={1}
+            parentsQueryId={0}
+          />
         }
       />
     </div>
