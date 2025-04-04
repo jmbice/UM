@@ -1,0 +1,105 @@
+.add-child-second {
+  background: #e2e2ff;
+  color: #18191a;
+  font-size: 0.743rem;
+  font-family: LabGrotesque;
+  font-weight: 900;
+  font-style: normal;
+  height: 3rem;
+  width: 15rem;
+  border-radius: 4px;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.add-child-third {
+  background: blue;
+  color: white;
+  font-size: 0.743rem;
+  font-family: LabGrotesque;
+  font-weight: 900;
+  font-style: normal;
+  height: 3rem;
+  width: 15rem;
+  border-radius: 4px;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.add-child-single {
+  background: #18191a;
+  color: white;
+  font-size: 0.743rem;
+  font-family: LabGrotesque;
+  font-weight: 900;
+  font-style: normal;
+  height: 3rem;
+  width: 15rem;
+  border-radius: 4px;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.toggle-individual {
+  background: transparent;
+  border: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.edit-single {
+  background: #18191a;
+  color: white;
+  font-size: 0.743rem;
+  font-family: LabGrotesque;
+  font-weight: 900;
+  font-style: normal;
+  width: 7.5rem;
+  height: 1.5rem;
+  border-radius: 4px;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.edit-second {
+  background: #e2e2ff;
+  color: #18191a;
+  font-size: 0.743rem;
+  font-family: LabGrotesque;
+  font-weight: 900;
+  font-style: normal;
+  height: 1.5rem;
+  width: 7.5rem;
+  border-radius: 4px;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.edit-third {
+  background: blue;
+  color: white;
+  font-size: 0.743rem;
+  font-family: LabGrotesque;
+  font-weight: 900;
+  font-style: normal;
+  height: 1.5rem;
+  width: 7.5rem;
+  border-radius: 4px;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.title {
+  padding: 15px 0;
+  border-bottom: 5px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}

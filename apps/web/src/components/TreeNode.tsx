@@ -60,34 +60,44 @@ export const TreeNode = ({
     if (familyMembersChildren.length || !isVisible) {
       setDomUpdateId(`${new Date().getUTCDate()}_${id}`);
     }
-  }, [familyMembersChildren.length, isVisible]);
+  }, [familyMembersChildren.length, isVisible, isOpen]);
+
+  /* Add Family Member */
+  const setAddFamilyMember = useAddFamilyMember((s) => s.setAddFamilyMember);
+
+  const colors = ["single", "second", "third"];
+  const buttonStyles = colors[generation % 3];
 
   return (
     <div
       data-id={id}
       className="tree-node"
       style={{
-        border: "1px solid white",
-        padding: "5px",
-        borderRadius: "5px",
+        backgroundColor: "white",
+        color: "black",
+        padding: "10px 0 10px 45px",
+        borderRadius: "0",
+        margin: "5px",
         marginLeft: `${20 * generation}px`,
       }}
     >
-      isVisible:{isVisible.toString()}
-      name: {name}
       <ShowIf
         condition={isVisible}
         show={
           <>
-            <p>{name} </p>
-            <button onClick={() => toggleIsOpen(id)}>
-              {isOpen ? "▼" : "▶"}
-            </button>
+            <h1 onClick={() => toggleIsOpen(id)} className={styles.title}>
+              <text>
+                {isOpen ? "▼" : "▶"} {name}
+              </text>
+
+              <button className={styles[`edit-${buttonStyles}`]}>Edit</button>
+            </h1>
 
             <ShowIf
               condition={isOpen}
               show={
-                <div>
+                <div className={styles.container}>
+                  <br />
                   Birth: {birthday} <br />
                   <ShowIf
                     condition={!!deathDay}
@@ -98,6 +108,14 @@ export const TreeNode = ({
                     }
                   />
                   Children: {childrenCount} <br />
+                  <button
+                    className={styles[`add-child-${buttonStyles}`]}
+                    onClick={() => {
+                      setAddFamilyMember(id, name, childrenQueryId);
+                    }}
+                  >
+                    Add Family Member
+                  </button>
                   <ShowIf
                     condition={isLoadingChildren && childrenCount > 0}
                     show={<p> Loading Children... </p>}
@@ -113,6 +131,7 @@ export const TreeNode = ({
                         key={child.id}
                         {...child}
                         generation={generation + 1}
+                        parentsQueryId={childrenQueryId}
                       />
                     ))}
                   />
